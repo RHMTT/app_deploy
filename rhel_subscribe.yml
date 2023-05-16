@@ -2,9 +2,14 @@
 - name: playbook to subscribe rhel
   hosts: all
   tasks:
-  - name: 
+  - name: Delete old repo
+    file:
+      path: /etc/yum.repos.d/rh-cloud-rhel8-eus.repo
+      state: absent
+
+  - name: run redhat subscription
     redhat_subscription:
       state: present
-      username: "{{ rhel_username }}"
-      password: "{{ rhel_password }}"
-      pool_ids: "{{ rhel_pool }}"
+      username: "{{ rhn_user }}"
+      password: "{{ rhn_pass }}"
+      pool_ids: "{{ rhn_pool }}"
