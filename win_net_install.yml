@@ -1,8 +1,6 @@
 ---
 - name: install .net on windows server
   hosts: all
-  become: true
-  
   tasks:
   - name: Install .Net 3.5
     ansible.windows.win_optional_feature:
