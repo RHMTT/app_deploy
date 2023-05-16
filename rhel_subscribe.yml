@@ -1,0 +1,10 @@
+---
+- name: playbook to subscribe rhel
+  hosts: all
+  tasks:
+  - name: 
+    redhat_subscription:
+      state: present
+      username: "{{ rhel_username }}"
+      password: "{{ rhel_password }}"
+      pool_ids: "{{ rhel_pool }}"
