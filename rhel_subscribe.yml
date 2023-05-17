@@ -1,6 +1,7 @@
 ---
 - name: playbook to subscribe rhel
   hosts: all
+  become: true
   tasks:
   - name: Delete old repo
     ansible.builtin.file:
@@ -13,3 +14,4 @@
       username: "{{ rhn_user }}"
       password: "{{ rhn_pass }}"
       pool_ids: "{{ rhn_pool }}"
+      
