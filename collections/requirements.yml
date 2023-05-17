@@ -2,5 +2,5 @@
 collections:
   - name: servicenow.itsm
   - name: ansible.windows
-  - name: https://github.com/RedHatSatellite/satellite-ansible-collection/releases/download/3.10.0/redhat-satellite-3.10.0.tar.gz
-    type: file
+  - name: https://github.com/RedHatSatellite/satellite-ansible-collection.git
+    type: git
