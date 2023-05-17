@@ -2,5 +2,4 @@
 collections:
   - name: servicenow.itsm
   - name: ansible.windows
-  - name: https://github.com/RedHatSatellite/satellite-ansible-collection.git
-    type: git
+  - name: community.general
