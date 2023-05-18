@@ -1,10 +1,9 @@
 - hosts: all
   become: true
+  vars_files: rhn.yml
   vars:
     tomcat_version: 8.5.23
-    
     tomcat_permissions_production: True
-    
     tomcat_users:
       - username: "tomcat"
         password: "t3mpp@ssw0rd"
