@@ -11,6 +11,18 @@
         roles: "tomcat,admin,manager,manager-gui"
       - username: "exampleuser"
         password: "us3rp@ssw0rd"
-        roles: "tomcat"        
+        roles: "tomcat"
+  tasks:
+    - name: Delete old repo
+    ansible.builtin.file:
+      path: /etc/yum.repos.d/rh-cloud-rhel8-eus.repo
+      state: absent
+
+  - name: run redhat subscription
+    community.general.redhat_subscription:
+      state: present
+      username: "{{ rhn_user }}"
+      password: "{{ rhn_pass }}"
+      pool_ids: "{{ rhn_pool }}"
   roles:
     - role: zaxos.tomcat-ansible-role
